@@ -1,6 +1,6 @@
 #include <GL/glut.h>
 #include <functional>
-#include "controller/Controller.h"
+#include "keyboard/Handler.h"
 
 #include "Init.h"
 
@@ -17,7 +17,7 @@ void Init::initializeGlutCallbacks()
 
 void Init::start(int argc, char* argv[])
 {
-    Controller cnt;
+    Handler cnt(new Router());
 
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGBA);
